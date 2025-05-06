@@ -1143,7 +1143,7 @@ def ensemblgene_to_symbol(query,species):
     # assume query is a list, will also return a list
     import mygene
     mg = mygene.MyGeneInfo()
-    out = mg.querymany(query,scopes='ensemblgene',fileds='symbol',species=species,returnall=True,as_dataframe=True,df_index=True)
+    out = mg.querymany(query,scopes='ensemblgene',fields='symbol',species=species,returnall=True,as_dataframe=True,df_index=True)
     result = out['out']['symbol'].fillna('unknown_gene').tolist()
     try:
         assert len(query) == len(result)
